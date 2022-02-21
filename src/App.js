@@ -1,9 +1,15 @@
 import './App.css';
+import Liste from "./components/Liste/index";
+
+
 function App() {
   return (
     <div className="App">
-      <h1 className='header'>Todos</h1>
-      
+      <Liste/>
+
+
+
+
     </div>
   );
 }
