@@ -1,15 +1,18 @@
 import React from 'react'
 import './index.css'
 
-function index() {
-  return (
 
+function Liste() {
+  return (
     <div>
       <section class="todoapp">
         <header class="header">
           <h1>todos</h1>
-          <form>
-            <input class="new-todo" placeholder="What needs to be done?" autofocus />
+          <form >
+            <input class="new-todo"
+              placeholder="What needs to be done?"
+              autofocus
+            />
           </form>
         </header>
 
@@ -46,8 +49,6 @@ function index() {
 
 
         <footer class="footer">
-
-
           <span class="todo-count">
             <strong>2</strong>
             items left
@@ -64,8 +65,6 @@ function index() {
               <a>Completed</a>
             </li>
           </ul>
-
-
           <button class="clear-completed">
             Clear completed
           </button>
@@ -77,9 +76,8 @@ function index() {
         <p>TodoMVC ödevim </p>
         <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
       </footer>
-
     </div>
   )
 }
 
-export default index
+export default Liste
