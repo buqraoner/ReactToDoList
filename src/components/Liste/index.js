@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
 
 
+
+
 function Liste() {
+
+   const [todo , setTodo] = useState("");
+
+
+
+
   return (
+
+
     <div>
       <section class="todoapp">
         <header class="header">
@@ -19,7 +29,7 @@ function Liste() {
         <section class="main">
           <input class="toggle-all" type="checkbox" />
           <label for="toggle-all">
-            Mark all as complete
+            Mark all as complete 
           </label>
 
           <ul class="todo-list">
@@ -76,6 +86,7 @@ function Liste() {
         <p>TodoMVC ödevim </p>
         <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
       </footer>
+      
     </div>
   )
 }
