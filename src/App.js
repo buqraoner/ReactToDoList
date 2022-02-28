@@ -1,17 +1,9 @@
-import './App.css';
-import Liste from './components/Liste/index';
-
+import React from 'react'
 
 function App() {
   return (
-    <div className="App">
-    <Liste/>
-
-
-
-
-    </div>
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App
