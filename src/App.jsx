@@ -1,14 +1,24 @@
 import React from 'react'
-import Header from './component/Header'
+import Content from './component/Content';
+import Footer from './component/Footer';
+import Header from './component/Header';
+
+
 
 
 function App() {
 
   return (
-    <section className='todoapp'>
-      <Header/>
+    <>
+      <section className='todoapp'>
+        <Header />
+        <Content />
       </section>
-    
+
+      <Footer />
+
+    </>
+
   );
 }
 

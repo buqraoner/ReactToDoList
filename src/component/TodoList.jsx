@@ -1,11 +1,17 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux"
-import { toggle } from '../redux/todos/TodosSlice';
+import { toggle, destroy } from '../redux/todos/TodosSlice';
 
 
 function ToDoList() {
-    dispatch = useDispatch();
+    const dispatch = useDispatch();
     const items = useSelector((state) => state.todos.todos);
+    const handleDestroy = (id) => {
+        if (window.confirm("Are you sure ? ")) {
+            dispatch(destroy(id));
+        }
+
+    }
 
 
     return (
@@ -13,28 +19,26 @@ function ToDoList() {
             {items.map((item) => (
                 <li key={item.id} className={item.completed ? "completed" : ""}>
                     <div className="view">
-                        <input className="toggle" type="checkbox"
-                            onChange={() => dispatch(toggle({ item: item.id }))} />
+                        <input
+                            className="toggle"
+                            type="checkbox"
+                            checked={item.completed}
+                            onChange={() => dispatch(toggle({ item: item.id }))}
+                        />
                         <label>
                             {item.title}
                         </label>
-                        <button class="destroy"></button>
+                        <button
+                            className="destroy"
+                            onClick={() => handleDestroy(item.id)}></button>
                     </div>
                 </li>
             ))
             };
-
-        </ul >
+        </ul>
     )
 
-    {/*
-            <li className="completed">
-                <div className="view">
-                    <input className="toggle" type="checkbox" />
-                    <label>Learn JavaScript</label>
-                    <button class="destroy"></button>
-                </div>
-            </li>*/}
+
 }
 
-export default ToDoList
+export default ToDoList;
