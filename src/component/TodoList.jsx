@@ -4,14 +4,25 @@ import { toggle, destroy } from '../redux/todos/TodosSlice';
 
 
 function ToDoList() {
+
+    const items = useSelector((state) => state.todos.items);
+
     const dispatch = useDispatch();
-    const items = useSelector((state) => state.todos.todos);
+
     const handleDestroy = (id) => {
         if (window.confirm("Are you sure ? ")) {
             dispatch(destroy(id));
         }
 
     }
+
+    filtered = items;
+    if(activeFilter !== "all"){
+        filtered = items.filter((item) => 
+        activeFilter === "active"
+        ? item.completed === false && item 
+        : todo.completed === true && item,
+        )};
 
 
     return (
@@ -33,8 +44,7 @@ function ToDoList() {
                             onClick={() => handleDestroy(item.id)}></button>
                     </div>
                 </li>
-            ))
-            };
+            ))};
         </ul>
     )
 

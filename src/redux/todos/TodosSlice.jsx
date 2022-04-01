@@ -12,35 +12,38 @@ export const todosSlice = createSlice({
             },
             {
                 id: 2,
-                title: "Read Book",
+                title: "Read a book",
                 completed: false
-            }
+            },
         ],
+        activeFilter: "all",
     },
 
     reducers: {
         addTodo: (state, action) => {
-            state.items.push(action.payload)
-        }
-    },
-    toggle: (state, action) => {
-        const { id } = action.payload;
-        const item = state.items.find((item) => item.id === id);
+            state.items.push(action.payload);
+        },
+        toggle: (state, action) => {
+            const { id } = action.payload;
+            const item = state.items.find((item) => item.id === id);
 
-        item.completed = !item.completed;
-    },
+            item.completed = !item.completed;
+        },
+        destroy: (state, action) => {
 
-    destroy: (state, action) => {
-
-        const id = action.payload;
-        const filtered = state.item.filtered((item) => item.id !== id);
-        state.items = filtered;
-    },
-
-
-
-
+            const id = action.payload;
+            const filtered = state.items.filtered((item) => item.id !== id);
+            state.items = filtered;
+        },
+        changeActiveFilter: (state, action) => {
+            state.activeFilter = action.payload;
+        },
+        clearCompleted: (state) => {
+            const filter = state.items.filter((item) => !item.completed);
+            state.items = filtered;
+        },
+    }
 });
 
-export const { addTodo, toggle,destroy } = todosSlice.actions;
+export const { addTodo, toggle, destroy, changeActiveFilter, clearCompleted } = todosSlice.actions;
 export default todosSlice.reducer;

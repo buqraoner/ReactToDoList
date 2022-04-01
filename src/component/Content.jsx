@@ -11,9 +11,10 @@ function Content() {
                 <label htmlFor="toggle-all">
                     Mark all as complete
                 </label>
-                <TodoList />
+                
             </section>
             <ContentFooter />
+            
         </>
     )
 }
